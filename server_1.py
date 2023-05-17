@@ -19,7 +19,7 @@ def main():
 
     #Setting Application description
    
-    st.markdown("<h3></h3>", unsafe_allow_html=True)
+    st.markdown(html_temp, unsafe_allow_html=True)
 
     #Setting Application sidebar default
     

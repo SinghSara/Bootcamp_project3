@@ -11,8 +11,13 @@ model = pickle.load(open('model.pkl', 'rb'))
 def main():
     #Setting Application title
     st.title('Telco Customer Churn Prediction App')
+    html_temp = """
+    <div style="background-color:Blue;padding:20px">
+    <h2 style="color:white;text-align:center;">Streamlit Diabetes Predictor </h2>
+    </div>
+    """
 
-      #Setting Application description
+    #Setting Application description
    
     st.markdown("<h3></h3>", unsafe_allow_html=True)
 

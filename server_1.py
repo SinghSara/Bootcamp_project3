@@ -13,7 +13,7 @@ def main():
     st.title('Telco Customer Churn Prediction App')
     html_temp = """
     <div style="background-color:Blue;padding:20px">
-    <h2 style="color:white;text-align:center;">Streamlit Diabetes Predictor </h2>
+    <h2 style="color:white;text-align:center;">Streamlit Customer Churn Prediction </h2>
     </div>
     """
 

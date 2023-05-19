@@ -87,7 +87,7 @@ def main():
         enc=pickle.load(open(name, 'rb'))
         
         features_df[col]=enc.transform(features_df[col])
-    
+    #scaling
     scale_list=pickle.load(open("scale_col.pkl", 'rb'))
     for col in scale_list:
          scaler_name=col+"_scaler.pkl"

@@ -93,9 +93,9 @@ def main():
     for col in scale_list:
          scaler_name=col+"_scaler.pkl"
          minmaxscaler=pickle.load(open(scaler_name, 'rb'))
-         features_df[col]=minmaxscaler.transform(features_df[col])
+         features_df[col]=minmaxscaler.transform(features_df[[col]])
 
-
+    
     prediction = model.predict(features_df)
     if st.button('Predict'):
         if prediction == 1:

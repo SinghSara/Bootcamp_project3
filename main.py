@@ -31,11 +31,17 @@ for col in df.columns:
         filename=col+".pkl"
         pickle.dump(label_encoder, open(filename,'wb'))
 df.drop(['customerID'],axis=1,inplace=True)
+scale_list=[]
 for col in df.columns:
     if df[col].dtype!='category':
+        scale_list=scale_list+[col]
+
         minmax = MinMaxScaler()
+        scaler_file=col+"_scaler.pkl"
         df[col]=minmax.fit_transform(df[[col]])
-pickle.dump(minmax, open('minmax.pkl','wb'))
+        pickle.dump(minmax, open(scaler_file,'wb'))
+print(scale_list)     
+pickle.dump(scale_list, open('scale_col.pkl','wb'))
 X,Y=df.loc[:, ~df.columns.isin(['Churn'])],df.loc[:, df.columns.isin(['Churn'])]
 X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.33,stratify=Y, random_state=42)
 model=LogisticRegression(C=1,penalty='l2',solver='newton-cg')

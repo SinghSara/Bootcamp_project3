@@ -77,6 +77,7 @@ def main():
     #st.markdown("<h3></h3>", unsafe_allow_html=True)
     #st.dataframe(features_df)
     #Preprocess inputs
+    #encoding
     col_names = pickle.load(open('cat_col.pkl', 'rb'))
     print(col_names)
     for col in col_names:
